@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+
+  server:
+    build:
+      context: ./server
+    command: python manage.py runserver 0.0.0.0:8000
+    container_name: twitter-server
+    environment:
+      - PGDATABASE=twitter
+      - PGUSER=test
+      - PGPASSWORD=test1234
+      - PGHOST=db
+    ports:
+      - 8000:8000
+    volumes:
+      - ./server:/usr/src/app
+    depends_on:
+      - redis
+      - db
+  redis:
+    container_name: redis
+    image: redis:6-alpine
+
+  db:
+    container_name: twitter-db
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_DB=twitter
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test1234
+    expose:
+      - 5432
+    volumes:
+      - twitter-db:/var/lib/postgresql/data
+
+volumes:
+  twitter-db:
