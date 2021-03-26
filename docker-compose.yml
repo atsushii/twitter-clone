@@ -12,6 +12,7 @@ services:
       - PGUSER=test
       - PGPASSWORD=test1234
       - PGHOST=db
+      - REDIS_URL=redis://twitter-redis:6379/0
     ports:
       - 8000:8000
     volumes:

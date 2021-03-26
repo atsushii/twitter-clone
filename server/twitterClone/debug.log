@@ -12283,3 +12283,391 @@ WebSocket DISCONNECT /chat/test@/ [172.18.0.1:59886]
 WebSocket DISCONNECT /chat/test@/ [172.18.0.1:59886]
 WebSocket DISCONNECT /chat/admin [172.18.0.1:59898]
 WebSocket DISCONNECT /chat/admin [172.18.0.1:59898]
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/chat/consumers.py changed, reloading.
+/usr/src/app/chat/consumers.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:59906]
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:59906]
+Exception inside application: Multiple exceptions: [Errno 111] Connect call failed ('127.0.0.1', 6379), [Errno 99] Cannot assign requested address
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/channels/utils.py", line 51, in await_many_dispatch
+    await dispatch(result)
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 73, in dispatch
+    await handler(message)
+  File "/usr/src/app/chat/consumers.py", line 26, in websocket_connect
+    await self.channel_layer.group_add(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 622, in group_add
+    async with self.connection(self.consistent_hash(group)) as connection:
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 884, in __aenter__
+    self.conn = await self.pool.pop()
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 78, in pop
+    conn = await aioredis.create_redis(**self.host)
+  File "/usr/local/lib/python3.9/site-packages/aioredis/commands/__init__.py", line 168, in create_redis
+    conn = await create_connection(address, db=db,
+  File "/usr/local/lib/python3.9/site-packages/aioredis/connection.py", line 111, in create_connection
+    reader, writer = await asyncio.wait_for(open_connection(
+  File "/usr/local/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/usr/local/lib/python3.9/site-packages/aioredis/stream.py", line 23, in open_connection
+    transport, _ = await get_event_loop().create_connection(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1064, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('127.0.0.1', 6379), [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/sessions.py", line 254, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.9/site-packages/channels/auth.py", line 181, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.9/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 468, in receive
+    message_channel, message = await self.receive_single(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 523, in receive_single
+    content = await self._brpop_with_clean(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 356, in _brpop_with_clean
+    async with self.connection(index) as connection:
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 884, in __aenter__
+    self.conn = await self.pool.pop()
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 78, in pop
+    conn = await aioredis.create_redis(**self.host)
+  File "/usr/local/lib/python3.9/site-packages/aioredis/commands/__init__.py", line 168, in create_redis
+    conn = await create_connection(address, db=db,
+  File "/usr/local/lib/python3.9/site-packages/aioredis/connection.py", line 111, in create_connection
+    reader, writer = await asyncio.wait_for(open_connection(
+  File "/usr/local/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/usr/local/lib/python3.9/site-packages/aioredis/stream.py", line 23, in open_connection
+    transport, _ = await get_event_loop().create_connection(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1064, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('127.0.0.1', 6379), [Errno 99] Cannot assign requested address
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:59906]
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:59906]
+/usr/src/app/chat/consumers.py changed, reloading.
+/usr/src/app/chat/consumers.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/chat/consumers.py changed, reloading.
+/usr/src/app/chat/consumers.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:59922]
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:59922]
+Exception inside application: Multiple exceptions: [Errno 111] Connect call failed ('127.0.0.1', 6379), [Errno 99] Cannot assign requested address
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/channels/utils.py", line 51, in await_many_dispatch
+    await dispatch(result)
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 73, in dispatch
+    await handler(message)
+  File "/usr/src/app/chat/consumers.py", line 26, in websocket_connect
+    await self.channel_layer.group_add(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 622, in group_add
+    async with self.connection(self.consistent_hash(group)) as connection:
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 884, in __aenter__
+    self.conn = await self.pool.pop()
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 78, in pop
+    conn = await aioredis.create_redis(**self.host)
+  File "/usr/local/lib/python3.9/site-packages/aioredis/commands/__init__.py", line 168, in create_redis
+    conn = await create_connection(address, db=db,
+  File "/usr/local/lib/python3.9/site-packages/aioredis/connection.py", line 111, in create_connection
+    reader, writer = await asyncio.wait_for(open_connection(
+  File "/usr/local/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/usr/local/lib/python3.9/site-packages/aioredis/stream.py", line 23, in open_connection
+    transport, _ = await get_event_loop().create_connection(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1064, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('127.0.0.1', 6379), [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/sessions.py", line 254, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.9/site-packages/channels/auth.py", line 181, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.9/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 468, in receive
+    message_channel, message = await self.receive_single(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 523, in receive_single
+    content = await self._brpop_with_clean(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 356, in _brpop_with_clean
+    async with self.connection(index) as connection:
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 884, in __aenter__
+    self.conn = await self.pool.pop()
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 78, in pop
+    conn = await aioredis.create_redis(**self.host)
+  File "/usr/local/lib/python3.9/site-packages/aioredis/commands/__init__.py", line 168, in create_redis
+    conn = await create_connection(address, db=db,
+  File "/usr/local/lib/python3.9/site-packages/aioredis/connection.py", line 111, in create_connection
+    reader, writer = await asyncio.wait_for(open_connection(
+  File "/usr/local/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/usr/local/lib/python3.9/site-packages/aioredis/stream.py", line 23, in open_connection
+    transport, _ = await get_event_loop().create_connection(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1064, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('127.0.0.1', 6379), [Errno 99] Cannot assign requested address
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:59922]
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:59922]
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:59934]
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:59934]
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:59934]
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:59934]
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+HTTP GET /admin/ 200 [0.10, 172.18.0.1:59990]
+HTTP GET /admin/ 200 [0.10, 172.18.0.1:59990]
+HTTP GET /admin/logout/ 200 [0.03, 172.18.0.1:59990]
+HTTP GET /admin/logout/ 200 [0.03, 172.18.0.1:59990]
+HTTP GET /admin/ 302 [0.01, 172.18.0.1:59990]
+HTTP GET /admin/ 302 [0.01, 172.18.0.1:59990]
+HTTP GET /admin/login/?next=/admin/ 200 [0.02, 172.18.0.1:59990]
+HTTP GET /admin/login/?next=/admin/ 200 [0.02, 172.18.0.1:59990]
+HTTP GET /static/admin/css/login.css 200 [0.02, 172.18.0.1:59990]
+HTTP GET /static/admin/css/login.css 200 [0.02, 172.18.0.1:59990]
+HTTP POST /admin/login/?next=/admin/ 302 [0.16, 172.18.0.1:59990]
+HTTP POST /admin/login/?next=/admin/ 302 [0.16, 172.18.0.1:59990]
+HTTP GET /admin/ 200 [0.03, 172.18.0.1:59990]
+HTTP GET /admin/ 200 [0.03, 172.18.0.1:59990]
+HTTP GET /static/admin/img/icon-changelink.svg 200 [0.01, 172.18.0.1:59990]
+HTTP GET /static/admin/img/icon-changelink.svg 200 [0.01, 172.18.0.1:59990]
+HTTP GET /static/admin/img/icon-deletelink.svg 200 [0.02, 172.18.0.1:59992]
+HTTP GET /static/admin/img/icon-deletelink.svg 200 [0.02, 172.18.0.1:59992]
+HTTP GET /admin/core/chatmessage/ 200 [0.04, 172.18.0.1:59992]
+HTTP GET /admin/core/chatmessage/ 200 [0.04, 172.18.0.1:59992]
+HTTP GET /admin/jsi18n/ 200 [0.03, 172.18.0.1:59992]
+HTTP GET /admin/jsi18n/ 200 [0.03, 172.18.0.1:59992]
+HTTP GET /admin/core/thread/ 200 [0.05, 172.18.0.1:59992]
+HTTP GET /admin/core/thread/ 200 [0.05, 172.18.0.1:59992]
+HTTP GET /admin/jsi18n/ 200 [0.05, 172.18.0.1:59992]
+HTTP GET /admin/jsi18n/ 200 [0.05, 172.18.0.1:59992]
+HTTP GET /admin/core/chatmessage/ 200 [0.04, 172.18.0.1:59992]
+HTTP GET /admin/core/chatmessage/ 200 [0.04, 172.18.0.1:59992]
+HTTP GET /admin/ 200 [0.04, 172.18.0.1:59992]
+HTTP GET /admin/ 200 [0.04, 172.18.0.1:59992]
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:60016]
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:60016]
+Exception inside application: [Errno -2] Name or service not known
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/channels/utils.py", line 51, in await_many_dispatch
+    await dispatch(result)
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 73, in dispatch
+    await handler(message)
+  File "/usr/src/app/chat/consumers.py", line 26, in websocket_connect
+    await self.channel_layer.group_add(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 622, in group_add
+    async with self.connection(self.consistent_hash(group)) as connection:
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 884, in __aenter__
+    self.conn = await self.pool.pop()
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 78, in pop
+    conn = await aioredis.create_redis(**self.host)
+  File "/usr/local/lib/python3.9/site-packages/aioredis/commands/__init__.py", line 168, in create_redis
+    conn = await create_connection(address, db=db,
+  File "/usr/local/lib/python3.9/site-packages/aioredis/connection.py", line 111, in create_connection
+    reader, writer = await asyncio.wait_for(open_connection(
+  File "/usr/local/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/usr/local/lib/python3.9/site-packages/aioredis/stream.py", line 23, in open_connection
+    transport, _ = await get_event_loop().create_connection(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1017, in create_connection
+    infos = await self._ensure_resolved(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1396, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/sessions.py", line 254, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.9/site-packages/channels/auth.py", line 181, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.9/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 468, in receive
+    message_channel, message = await self.receive_single(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 523, in receive_single
+    content = await self._brpop_with_clean(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 356, in _brpop_with_clean
+    async with self.connection(index) as connection:
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 884, in __aenter__
+    self.conn = await self.pool.pop()
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 78, in pop
+    conn = await aioredis.create_redis(**self.host)
+  File "/usr/local/lib/python3.9/site-packages/aioredis/commands/__init__.py", line 168, in create_redis
+    conn = await create_connection(address, db=db,
+  File "/usr/local/lib/python3.9/site-packages/aioredis/connection.py", line 111, in create_connection
+    reader, writer = await asyncio.wait_for(open_connection(
+  File "/usr/local/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/usr/local/lib/python3.9/site-packages/aioredis/stream.py", line 23, in open_connection
+    transport, _ = await get_event_loop().create_connection(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1017, in create_connection
+    infos = await self._ensure_resolved(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1396, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:60016]
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:60016]
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:60030]
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:60030]
+Exception inside application: [Errno -2] Name or service not known
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/channels/utils.py", line 51, in await_many_dispatch
+    await dispatch(result)
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 73, in dispatch
+    await handler(message)
+  File "/usr/src/app/chat/consumers.py", line 26, in websocket_connect
+    await self.channel_layer.group_add(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 622, in group_add
+    async with self.connection(self.consistent_hash(group)) as connection:
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 884, in __aenter__
+    self.conn = await self.pool.pop()
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 78, in pop
+    conn = await aioredis.create_redis(**self.host)
+  File "/usr/local/lib/python3.9/site-packages/aioredis/commands/__init__.py", line 168, in create_redis
+    conn = await create_connection(address, db=db,
+  File "/usr/local/lib/python3.9/site-packages/aioredis/connection.py", line 111, in create_connection
+    reader, writer = await asyncio.wait_for(open_connection(
+  File "/usr/local/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/usr/local/lib/python3.9/site-packages/aioredis/stream.py", line 23, in open_connection
+    transport, _ = await get_event_loop().create_connection(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1017, in create_connection
+    infos = await self._ensure_resolved(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1396, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/sessions.py", line 254, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.9/site-packages/channels/auth.py", line 181, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.9/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.9/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 468, in receive
+    message_channel, message = await self.receive_single(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 523, in receive_single
+    content = await self._brpop_with_clean(
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 356, in _brpop_with_clean
+    async with self.connection(index) as connection:
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 884, in __aenter__
+    self.conn = await self.pool.pop()
+  File "/usr/local/lib/python3.9/site-packages/channels_redis/core.py", line 78, in pop
+    conn = await aioredis.create_redis(**self.host)
+  File "/usr/local/lib/python3.9/site-packages/aioredis/commands/__init__.py", line 168, in create_redis
+    conn = await create_connection(address, db=db,
+  File "/usr/local/lib/python3.9/site-packages/aioredis/connection.py", line 111, in create_connection
+    reader, writer = await asyncio.wait_for(open_connection(
+  File "/usr/local/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/usr/local/lib/python3.9/site-packages/aioredis/stream.py", line 23, in open_connection
+    transport, _ = await get_event_loop().create_connection(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1017, in create_connection
+    infos = await self._ensure_resolved(
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1396, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+WebSocket HANDSHAKING /chat/admin [172.18.0.1:60038]
+WebSocket HANDSHAKING /chat/admin [172.18.0.1:60038]
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:60030]
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:60030]
+WebSocket DISCONNECT /chat/admin [172.18.0.1:60038]
+WebSocket DISCONNECT /chat/admin [172.18.0.1:60038]
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:60042]
+WebSocket HANDSHAKING /chat/test@/ [172.18.0.1:60042]
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:60042]
+WebSocket DISCONNECT /chat/test@/ [172.18.0.1:60042]

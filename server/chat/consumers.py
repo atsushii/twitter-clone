@@ -22,11 +22,12 @@ class ChatConsumer(AsyncWebsocketConsumer):
         self.thread_obj = thread_obj
         chat_room = f'thread_{thread_obj.id}'
         self.chat_room = chat_room
-        print(self.channel_name)
+        print(self.channel_layer)
         await self.channel_layer.group_add(
             chat_room,
             self.channel_name
         )
+        print('--------')
         await self.send({
             'type': 'websocket.accept'
         })
