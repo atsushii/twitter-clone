@@ -39,11 +39,11 @@ POST(post tweet): ```http://localhost:8000/tweet/create/```
 
 GET(get tweet list): ```http://localhost:8000/tweet/list/```
 
-GET(get tweet detail): ```http://localhost:8000/list/<int:tweet_id>```
+GET(get tweet detail): ```http://localhost:8000/tweet/list/<int:tweet_id>```
 
-PUT(update tweet): ```http://localhost:8000/update/<int:tweet_id>```
+PUT(update tweet): ```http://localhost:8000/tweet/update/<int:tweet_id>```
 
-DELETE(delete tweet): ```http://localhost:8000/delete/<int:tweet_id```
+DELETE(delete tweet): ```http://localhost:8000/tweet/delete/<int:tweet_id```
 
 ***Chat function***
 
