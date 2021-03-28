@@ -29,6 +29,10 @@ class TreadDetailView(generics.RetrieveAPIView):
     def get_object(self):
         target_username = self.kwargs.get('username')
         obj = Thread.objects.get_or_new(self.request.user, target_username)
+        if obj is None:
+            serializer = ThreadSerializer(data=obj)
+            serializer.is_valid(raise_exception=True)
+
         return obj
 
 
@@ -47,6 +51,7 @@ class SendMessageView(generics.CreateAPIView):
 
     def create(self, request, *args, **kwargs):
         instance = self.get_object()
+
         if instance is None:
             response = {
                 'message': f"thread doesn't exist with {self.kwargs.get('username')}"

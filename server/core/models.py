@@ -4,6 +4,7 @@ from django.contrib.auth.models import BaseUserManager, \
                                        PermissionsMixin
 from django.utils import timezone
 from django.db.models import Q
+from rest_framework import serializers
 
 
 class UserManager(BaseUserManager):
@@ -56,27 +57,30 @@ class ThreadManager(models.Manager):
         return qs
 
     def get_or_new(self, user, target_username):
-        username = user.username
-        if username == target_username:
+        try:
+            username = user.username
+            if username == target_username:
+                return None
+            lookup = Q(first__username=username) & Q(second__username=target_username)
+            lookup2 = Q(first__username=target_username) & Q(second__username=username)
+            qs = self.get_queryset().filter(lookup | lookup2).distinct()
+            if qs.count() == 1:
+                return qs.first()
+            elif qs.count() > 1:
+                return qs.order_by('timestamp').first()
+            else:
+                cls = user.__class__
+                user2 = cls.objects.get(username=target_username)
+                if user != user2:
+                    obj = self.model(
+                        first=user,
+                        second=user2
+                    )
+                    obj.save()
+                    return obj
             return None
-        lookup = Q(first__username=username) & Q(second__username=target_username)
-        lookup2 = Q(first__username=target_username) & Q(second__username=username)
-        qs = self.get_queryset().filter(lookup | lookup2).distinct()
-        if qs.count() == 1:
-            return qs.first()
-        elif qs.count() > 1:
-            return qs.order_by('timestamp').first()
-        else:
-            cls = user.__class__
-            user2 = cls.objects.get(username=target_username)
-            if user != user2:
-                obj = self.model(
-                    first=user,
-                    second=user2
-                )
-                obj.save()
-                return obj
-        return None
+        except Exception as e:
+            return None
 
 
 class Thread(models.Model):

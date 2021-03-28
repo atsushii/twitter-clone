@@ -8,11 +8,7 @@ from core.models import Tweet
 from tweet.serializers import TweetSerializer
 
 
-class BaseTweetView(generics.RetrieveAPIView,
-                    generics.UpdateAPIView,
-                    generics.DestroyAPIView,
-                    generics.ListAPIView
-                    ):
+class BaseTweetView(object):
 
     lookup_url_kwarg = 'tweet_id'
     authentication_classes = [SessionAuthentication]
@@ -43,7 +39,8 @@ class TweetsListView(generics.ListAPIView):
         return Tweet.objects.filter(user=user)
 
 
-class TweetDetailView(BaseTweetView):
+class TweetDetailView(BaseTweetView,
+                      generics.RetrieveAPIView):
     def get_object(self):
         queryset = self.get_queryset()
         query_filter = {self.lookup_field: self.kwargs['tweet_id']}
@@ -52,7 +49,8 @@ class TweetDetailView(BaseTweetView):
         return obj
 
 
-class TweetUpdateView(BaseTweetView):
+class TweetUpdateView(BaseTweetView,
+                      generics.UpdateAPIView):
     def update(self, request, *args, **kwargs):
         instance = self.get_object()
         instance.tweet = request.data.get('tweet')
@@ -67,5 +65,6 @@ class TweetUpdateView(BaseTweetView):
         return Response(serializer.data)
 
 
-class TweetDeleteView(BaseTweetView):
+class TweetDeleteView(BaseTweetView,
+                      generics.DestroyAPIView):
     pass
