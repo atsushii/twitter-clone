@@ -6,8 +6,18 @@ Created an application similar to Twitter by using Django.
 
 # Usage
 
-1. Build docker containers for running db and sever.
-```docker-compose up --build``` 
+1. Build docker image.
+```docker-compose build``` 
+
+2. Make migration file
+```docker-compose run --rm server python manage.py makemigrations core```
+
+3. Migrate
+```docker-compose run --rm server python manage.py migrate```
+
+4. Run container
+```docker-compose up```
+
 
 # URLs
 
