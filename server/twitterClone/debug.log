@@ -36445,3 +36445,53 @@ BAD VALIDATION MESSAGE: {'username': [ErrorDetail(string='user with this usernam
 BAD VALIDATION MESSAGE: {'username': [ErrorDetail(string='user with this username already exists.', code='unique')], 'status_code': 400}
 Bad Request: /user/register/
 Bad Request: /user/register/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /chat/target_user/
+Forbidden: /chat/target_user/
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /chat/thread/list/
+Forbidden: /chat/thread/list/
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /chat/target_user/
+Forbidden: /chat/target_user/
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /chat/send/target_user/
+Forbidden: /chat/send/target_user/
+UNEXPECTED ERROR: No Tweet matches the given query.
+UNEXPECTED ERROR: No Tweet matches the given query.
+Not Found: /tweet/list/1
+Not Found: /tweet/list/1
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /tweet/delete/1
+Forbidden: /tweet/delete/1
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /tweet/list/
+Forbidden: /tweet/list/
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /tweet/list/1
+Forbidden: /tweet/list/1
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /tweet/create/
+Forbidden: /tweet/create/
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /tweet/update/1
+Forbidden: /tweet/update/1
+BAD VALIDATION MESSAGE: {'non_field_errors': [ErrorDetail(string='Unable to authenticate by provided user', code='authenticate')], 'status_code': 400}
+BAD VALIDATION MESSAGE: {'non_field_errors': [ErrorDetail(string='Unable to authenticate by provided user', code='authenticate')], 'status_code': 400}
+Bad Request: /user/login/
+Bad Request: /user/login/
+BAD VALIDATION MESSAGE: {'username': [ErrorDetail(string='user with this username already exists.', code='unique')], 'status_code': 400}
+BAD VALIDATION MESSAGE: {'username': [ErrorDetail(string='user with this username already exists.', code='unique')], 'status_code': 400}
+Bad Request: /user/register/
+Bad Request: /user/register/
