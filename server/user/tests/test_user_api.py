@@ -4,7 +4,7 @@ from rest_framework import status
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 
-PASSWORD = 'test1234'
+PASSWORD = '1234Test'
 
 REGISTER_USER_URL = reverse('user:register')
 LOGIN_USER_URL = reverse('user:log-in')
@@ -17,7 +17,7 @@ def create_user(**kwargs):
     )
 
 
-class AuthenticationTest(APITestCase):
+class AuthenticationTests(APITestCase):
     def test_user_can_register(self):
         response = self.client.post(
             REGISTER_USER_URL, data={

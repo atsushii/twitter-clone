@@ -12,8 +12,6 @@ class UserManager(BaseUserManager):
             raise ValueError('User must have an username')
 
         user = self.model(username=self.model.normalize_username(username), **kwargs)
-        print('user', user)
-        print(password)
         user.set_password(password)
         user.save(using=self._db)
 
@@ -41,7 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     def __str__(self):
-        return self.username
+        return f'{self.username}'
 
 
 class Tweet(models.Model):
@@ -65,9 +63,9 @@ class ThreadManager(models.Manager):
         lookup2 = Q(first__username=target_username) & Q(second__username=username)
         qs = self.get_queryset().filter(lookup | lookup2).distinct()
         if qs.count() == 1:
-            return qs.first(), False
+            return qs.first()
         elif qs.count() > 1:
-            return qs.order_by('timestamp').first(), False
+            return qs.order_by('timestamp').first()
         else:
             cls = user.__class__
             user2 = cls.objects.get(username=target_username)
@@ -77,9 +75,8 @@ class ThreadManager(models.Manager):
                     second=user2
                 )
                 obj.save()
-                print('obj.id', obj.id)
-                return obj, True
-        return None, False
+                return obj
+        return None
 
 
 class Thread(models.Model):
@@ -92,10 +89,17 @@ class Thread(models.Model):
 
 
 class ChatMessage(models.Model):
-    thread = models.ForeignKey(Thread, null=True, blank=True, on_delete=models.SET_NULL)
+    thread = models.ForeignKey(Thread, null=True, blank=True, on_delete=models.SET_NULL, related_name='threads')
     sender = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['timestamp']
+
+    def __str__(self):
+        return f'{self.id}: {self.sender}: {self.message}: {self.timestamp}'
+
 
 
 

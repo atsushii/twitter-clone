@@ -1,24 +1,23 @@
 from rest_framework import serializers
 
 from core.models import Thread, ChatMessage
-from user.serializers import UserSerializer
+
+
+class ChatMessageSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ChatMessage
+        fields = ['id', 'message']
+        read_only_fields = ['timestamp', 'id']
 
 
 class ThreadSerializer(serializers.ModelSerializer):
 
-    first = UserSerializer()
-    second = UserSerializer()
+    first = serializers.StringRelatedField()
+    second = serializers.StringRelatedField()
+    threads = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Thread
-        fields = '__all__'
-        depth = 1
-
-
-class ChatMessageSerializer(serializers.ModelSerializer):
-    thread = ThreadSerializer()
-
-    class Meta:
-        model = ChatMessage
-        fields = '__all__'
-        depth = 1
+        fields = ['id', 'first', 'second', 'threads', 'updated']
+        read_only_fields = ['id']

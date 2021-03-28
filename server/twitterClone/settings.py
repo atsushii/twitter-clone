@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'rest_framework',
     'rest_framework.authtoken',
-    'channels',
     'core',
     'user',
     'tweet',
@@ -76,8 +75,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'twitterClone.wsgi.application'
-ASGI_APPLICATION = 'twitterClone.asgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -134,18 +131,6 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'core.User'
 
-
-REDIS_URL = os.getenv('REDIS_URL', 'redis://localhost:6379')
-
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            'hosts': [REDIS_URL],
-        },
-    },
-}
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
@@ -180,6 +165,16 @@ LOGGING = {
             'propagate': True,
         },
         'user': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'tweet': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'chat': {
             'handlers': ['file'],
             'level': 'INFO',
             'propagate': True,

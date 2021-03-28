@@ -7,6 +7,21 @@ class UserSerializer(serializers.ModelSerializer):
     password1 = serializers.CharField(write_only=True)
     password2 = serializers.CharField(write_only=True)
 
+    def validate_password1(self, value):
+        if len(value) < 8:
+            raise serializers.ValidationError('password must be greater than 8')
+
+        if not any(char.isdigit() for char in value):
+            raise serializers.ValidationError('password must be at least one numeral')
+
+        if not any(char.isupper() for char in value):
+            raise serializers.ValidationError('password must be at least one uppercase')
+
+        if not any(char.islower() for char in value):
+            raise serializers.ValidationError('password must be at least one lowercase')
+
+        return value
+
     def validate(self, data):
         if data['password1'] != data['password2']:
             raise serializers.ValidationError('password should be match')
