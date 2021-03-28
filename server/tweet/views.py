@@ -46,8 +46,7 @@ class TweetsListView(generics.ListAPIView):
 class TweetDetailView(BaseTweetView):
     def get_object(self):
         queryset = self.get_queryset()
-        query_filter = {}
-        query_filter[self.lookup_field] = self.kwargs['tweet_id']
+        query_filter = {self.lookup_field: self.kwargs['tweet_id']}
         obj = get_object_or_404(queryset, **query_filter)
         self.check_object_permissions(self.request, obj)
         return obj
@@ -70,4 +69,3 @@ class TweetUpdateView(BaseTweetView):
 
 class TweetDeleteView(BaseTweetView):
     pass
-

@@ -43,7 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class Tweet(models.Model):
-    user = models.ForeignKey(User, related_name='tweets', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='users', on_delete=models.CASCADE)
     tweet = models.TextField(max_length=280)
     created_date = models.DateTimeField(auto_now=True)
 
@@ -89,7 +89,9 @@ class Thread(models.Model):
 
 
 class ChatMessage(models.Model):
-    thread = models.ForeignKey(Thread, null=True, blank=True, on_delete=models.SET_NULL, related_name='threads')
+    thread = models.ForeignKey(Thread, null=True, blank=True,
+                               on_delete=models.SET_NULL,
+                               related_name='threads')
     sender = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)

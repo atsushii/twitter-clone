@@ -36185,3 +36185,215 @@ BAD VALIDATION MESSAGE: {'username': [ErrorDetail(string='user with this usernam
 BAD VALIDATION MESSAGE: {'username': [ErrorDetail(string='user with this username already exists.', code='unique')], 'status_code': 400}
 Bad Request: /user/register/
 Bad Request: /user/register/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 9358
+"GET /admin/ HTTP/1.1" 200 9358
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /admin/ HTTP/1.1" 200 9358
+"GET /admin/ HTTP/1.1" 200 9358
+"GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+"GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+"GET /admin/core/tweetlikeaction/ HTTP/1.1" 200 6772
+"GET /admin/core/tweetlikeaction/ HTTP/1.1" 200 6772
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/core/tweetlikeaction/add/ HTTP/1.1" 200 9983
+"GET /admin/core/tweetlikeaction/add/ HTTP/1.1" 200 9983
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8423
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8423
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 10592
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 10592
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"POST /admin/core/tweetlikeaction/add/ HTTP/1.1" 302 0
+"POST /admin/core/tweetlikeaction/add/ HTTP/1.1" 302 0
+"GET /admin/core/tweetlikeaction/ HTTP/1.1" 200 8205
+"GET /admin/core/tweetlikeaction/ HTTP/1.1" 200 8205
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+"GET /admin/core/tweetlikeaction/1/change/ HTTP/1.1" 200 10208
+"GET /admin/core/tweetlikeaction/1/change/ HTTP/1.1" 200 10208
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/core/tweet/ HTTP/1.1" 200 10213
+"GET /admin/core/tweet/ HTTP/1.1" 200 10213
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/core/tweet/2/change/ HTTP/1.1" 200 8983
+"GET /admin/core/tweet/2/change/ HTTP/1.1" 200 8983
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/core/tweet/ HTTP/1.1" 200 10213
+"GET /admin/core/tweet/ HTTP/1.1" 200 10213
+"GET /admin/core/tweetlikeaction/1/change/ HTTP/1.1" 200 10208
+"GET /admin/core/tweetlikeaction/1/change/ HTTP/1.1" 200 10208
+"GET /admin/core/tweetretweetaction/ HTTP/1.1" 200 6793
+"GET /admin/core/tweetretweetaction/ HTTP/1.1" 200 6793
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/core/tweetretweetaction/add/ HTTP/1.1" 200 10028
+"GET /admin/core/tweetretweetaction/add/ HTTP/1.1" 200 10028
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"POST /admin/core/tweetretweetaction/add/ HTTP/1.1" 302 0
+"POST /admin/core/tweetretweetaction/add/ HTTP/1.1" 302 0
+"GET /admin/core/tweetretweetaction/ HTTP/1.1" 200 8247
+"GET /admin/core/tweetretweetaction/ HTTP/1.1" 200 8247
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/core/tweetlikeaction/ HTTP/1.1" 200 7969
+"GET /admin/core/tweetlikeaction/ HTTP/1.1" 200 7969
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/core/tweet/ HTTP/1.1" 200 10213
+"GET /admin/core/tweet/ HTTP/1.1" 200 10213
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+/usr/src/app/tweet/views.py changed, reloading.
+/usr/src/app/tweet/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/tweet/serializers.py changed, reloading.
+/usr/src/app/tweet/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/tweet/views.py changed, reloading.
+/usr/src/app/tweet/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/tweet/serializers.py changed, reloading.
+/usr/src/app/tweet/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/tweet/serializers.py changed, reloading.
+/usr/src/app/tweet/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/tweet/views.py changed, reloading.
+/usr/src/app/tweet/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/core/models.py changed, reloading.
+/usr/src/app/core/models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/tweet/serializers.py changed, reloading.
+/usr/src/app/tweet/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/tweet/views.py changed, reloading.
+/usr/src/app/tweet/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/core/admin.py changed, reloading.
+/usr/src/app/core/admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/core/admin.py changed, reloading.
+/usr/src/app/core/admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/core/admin.py changed, reloading.
+/usr/src/app/core/admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/src/app/tweet/views.py changed, reloading.
+/usr/src/app/tweet/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /chat/target_user/
+Forbidden: /chat/target_user/
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /chat/thread/list/
+Forbidden: /chat/thread/list/
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /chat/target_user/
+Forbidden: /chat/target_user/
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /chat/send/target_user/
+Forbidden: /chat/send/target_user/
+UNEXPECTED ERROR: No Tweet matches the given query.
+UNEXPECTED ERROR: No Tweet matches the given query.
+Not Found: /tweet/list/1
+Not Found: /tweet/list/1
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /tweet/delete/1
+Forbidden: /tweet/delete/1
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /tweet/list/
+Forbidden: /tweet/list/
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /tweet/list/1
+Forbidden: /tweet/list/1
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /tweet/create/
+Forbidden: /tweet/create/
+UNEXPECTED ERROR: Authentication credentials were not provided.
+UNEXPECTED ERROR: Authentication credentials were not provided.
+Forbidden: /tweet/update/1
+Forbidden: /tweet/update/1
+BAD VALIDATION MESSAGE: {'non_field_errors': [ErrorDetail(string='Unable to authenticate by provided user', code='authenticate')], 'status_code': 400}
+BAD VALIDATION MESSAGE: {'non_field_errors': [ErrorDetail(string='Unable to authenticate by provided user', code='authenticate')], 'status_code': 400}
+Bad Request: /user/login/
+Bad Request: /user/login/
+BAD VALIDATION MESSAGE: {'username': [ErrorDetail(string='user with this username already exists.', code='unique')], 'status_code': 400}
+BAD VALIDATION MESSAGE: {'username': [ErrorDetail(string='user with this username already exists.', code='unique')], 'status_code': 400}
+Bad Request: /user/register/
+Bad Request: /user/register/
